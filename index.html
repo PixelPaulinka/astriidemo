@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ эмоций в текстах</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Герой-секция -->
+
+
+<!-- Секция инструкции -->
+<!-- Секция инструкции -->
+<section id="instructions" class="instructions">
+    <div class="container">
+        <h2 class="fade-in">Как пользоваться инструментом?</h2>
+        <div class="instruction-cards">
+            <div class="card">
+                <i class="fas fa-pencil-alt"></i>
+                <h3>1. Ввод текста</h3>
+                <p>Вставьте или введите текст в поле для анализа. Это может быть отрывок из книги, статья, сообщение или любой другой текст.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cogs"></i>
+                <h3>2. Простой анализ</h3>
+                <p>Нажмите кнопку <strong>"🔍 Простой анализ"</strong>, чтобы начать анализ. Этот режим определяет основные эмоции текста, такие как радость, грусть, злость и нейтральность, и дает общее представление о настроении. Это быстрый способ получить основную информацию о тексте.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cogs"></i>
+                <h3>3. Сложный анализ</h3>
+                <p>Нажмите кнопку <strong>"🔍 Сложный анализ"</strong>, чтобы получить более глубокий анализ текста. В этом режиме инструмент оценивает более тонкие эмоции, такие как тревога, недовольство, волнение, а также исследует тональность текста, выявляя его глубокое настроение.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-eraser"></i>
+                <h3>4. Очистка текста</h3>
+                <p>Если хотите начать заново, нажмите кнопку <strong>"🧹 Очистить"</strong>. Она удалит весь текст и результаты анализа.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-question-circle"></i>
+                <h3>5. Уточнение анализа</h3>
+                <p>В поле <strong>"Уточнение для анализа"</strong> вы можете добавить дополнительные инструкции, чтобы уточнить, на что обратить внимание в тексте.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-clipboard"></i>
+                <h3>6. Вставка текста</h3>
+                <p>Используйте кнопку <strong>"📋 Вставить"</strong>, чтобы быстро вставить текст из буфера обмена.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-file-export"></i>
+                <h3>7. Экспорт результатов</h3>
+                <p>После анализа вы можете сохранить результаты в текстовом файле, нажав кнопку <strong>"📤 Экспорт"</strong>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Секция анализа эмоций -->
+<section id="emotion-analysis" class="emotion-analysis">
+    <div class="container">
+        <h2 class="fade-in">Анализ эмоций</h2>
+        <textarea id="text-input" placeholder="Введите текст для анализа эмоций..."></textarea>
+        <br>
+        <textarea id="custom-instruction" placeholder="Уточнение для анализа (например, на что обратить внимание)..."></textarea>
+        <div id="analysis-type">
+            <button id="simple-analysis-btn" class="btn">🔍 Простой анализ</button>
+            <button id="advanced-analysis-btn" class="btn">🔍 Сложный анализ</button>
+            <button id="paste-btn" class="btn">📋 Вставить</button>
+            <button id="clear-btn" class="btn">🧹 Очистить</button>
+			        <!-- Кнопка для экспорта -->
+        <button id="export-btn" class="btn">📤 Экспорт</button>
+		    <!-- Модальное окно -->
+    <div id="export-modal" class="modal">
+        <div class="modal-content">
+            <h3>Выберите формат для экспорта</h3>
+            <button id="export-txt" class="btn">Текстовый файл (txt)</button>
+            <button id="close-modal" class="btn">Закрыть</button>
+        </div>
+    </div>
+        </div>
+    
+        <div id="result" class="result"></div>
+        <div id="loading" class="loading" style="display: none;">Идет анализ, подождите...</div>
+        
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pizzip/3.1.1/pizzip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.20.0/docxtemplater.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+
+<script src="script.js"></script>
+</body>
+</html>
